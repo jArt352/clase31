@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Concurso de disfraces</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <h1>👻 Concurso de disfraces</h1>
+    <p>DevCloud Academy · Halloween</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>1. Entra al concurso</h2>
+      <form id="form" novalidate>
+        <label>Tu nombre
+          <input id="nombre" maxlength="30" autocomplete="off" placeholder="Ana Torres">
+        </label>
+        <label>Tu disfraz
+          <input id="disfraz" maxlength="30" autocomplete="off" placeholder="Vampiro elegante">
+        </label>
+        <label>Tu foto (opcional)
+          <input id="foto" type="file" accept="image/jpeg,image/png,image/webp">
+        </label>
+        <img id="vista" alt="Vista previa de tu foto" hidden>
+        <button id="enviar" type="submit">Enviar al muro</button>
+        <p id="msg" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>2. Vota por tu favorito</h2>
+      <p class="nota">Tienes un solo voto.</p>
+      <div id="muro" class="muro"></div>
+    </section>
+
+    <section class="panel">
+      <h2>3. Ranking en vivo</h2>
+      <div id="ranking"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="pagina.js"></script>
+</body>
+</html>

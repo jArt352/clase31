@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muro en vivo</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="proyector">
+  <header class="cabecera">
+    <div>
+      <h1>👻 Concurso de disfraces</h1>
+      <p>Escanea el código y entra al muro</p>
+    </div>
+    <div>
+      <div id="qr"></div>
+      <p id="url"></p>
+    </div>
+  </header>
+
+  <main class="proyector-main">
+    <section>
+      <div id="muro" class="muro"></div>
+    </section>
+    <aside class="panel">
+      <h2>Ranking en vivo</h2>
+      <div id="ranking"></div>
+      <p id="contador"></p>
+      <button id="ganador">Revelar ganador</button>
+    </aside>
+  </main>
+
+  <div id="telon" hidden></div>
+  <canvas id="confeti" hidden></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+  <script src="proyector.js"></script>
+</body>
+</html>

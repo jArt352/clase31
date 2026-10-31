@@ -1,0 +1,81 @@
+/* estilos.css: aquí cambias colores y estilo de TU página */
+:root {
+  --fondo: #140a24;
+  --panel: #1f1133;
+  --tarjeta: #2a1745;
+  --texto: #f4eefc;
+  --suave: #b9a8d6;
+  --naranja: #ff8a1f;
+  --morado: #a56bff;
+  --ok: #3ddc97;
+  --error: #ff6b81;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font-family: system-ui, "Segoe UI", sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.5; }
+
+.cabecera { text-align: center; padding: 24px 16px 8px; }
+h1 { margin: 0; font-size: clamp(1.6rem, 6vw, 2.4rem); }
+.cabecera p { margin: 4px 0; color: var(--suave); }
+.aviso { background: #3a2a10; color: #ffd9a0 !important; border-radius: 10px; padding: 8px 12px; font-size: .85rem; max-width: 520px; margin: 10px auto !important; }
+
+main { max-width: 720px; margin: 0 auto; padding: 8px 16px 40px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.panel { background: var(--panel); border-radius: 16px; padding: 16px; }
+.panel h2 { margin: 0 0 10px; font-size: 1.1rem; color: var(--naranja); }
+.nota { color: var(--suave); font-size: .9rem; margin: 0 0 10px; }
+
+form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+label { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; font-size: .9rem; color: var(--suave); }
+input { width: 100%; min-width: 0; font: inherit; color: var(--texto); background: #150a26; border: 1px solid #4a2f75; border-radius: 10px; padding: 10px 12px; }
+input:focus { outline: 2px solid var(--morado); }
+button { font: inherit; font-weight: 600; border: 0; border-radius: 10px; padding: 11px 14px; background: var(--naranja); color: #2a1200; cursor: pointer; }
+button:disabled { opacity: .55; cursor: default; }
+#msg { margin: 0; min-height: 1.4em; color: var(--ok); }
+#msg.error { color: var(--error); }
+#vista { width: 96px; height: 96px; object-fit: cover; border-radius: 12px; }
+
+.muro { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.tarjeta { background: var(--tarjeta); border-radius: 14px; padding: 10px; text-align: center; }
+.tarjeta.nuevo { animation: aparece .5s cubic-bezier(.2, 1.4, .4, 1); }
+@keyframes aparece { from { transform: scale(.4) rotate(-6deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.foto { aspect-ratio: 1; border-radius: 10px; background: #1b0d30; display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; }
+.foto img { width: 100%; height: 100%; object-fit: cover; }
+.tarjeta h3 { margin: 8px 0 0; font-size: 1rem; overflow-wrap: anywhere; }
+.tarjeta .disfraz { color: var(--suave); font-size: .85rem; margin: 0; overflow-wrap: anywhere; }
+.tarjeta .votos { color: var(--naranja); font-weight: 600; margin: 4px 0; }
+.tarjeta button { width: 100%; padding: 8px; background: var(--morado); color: #fff; }
+.tarjeta button.mio { background: var(--ok); color: #06281a; }
+
+.fila { display: grid; grid-template-columns: 24px 90px 1fr 28px; gap: 8px; align-items: center; margin: 6px 0; }
+.fila .pos { color: var(--suave); }
+.fila .quien { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fila .n { text-align: right; font-weight: 600; }
+.barra { height: 12px; background: #150a26; border-radius: 6px; overflow: hidden; }
+.barra i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--morado), var(--naranja)); transition: width .6s ease; }
+
+/* ---------- Pantalla del proyector ---------- */
+.proyector .cabecera { display: flex; justify-content: space-between; align-items: center; text-align: left; padding: 20px 32px 8px; gap: 24px; }
+.proyector h1 { font-size: clamp(2rem, 4vw, 3.4rem); }
+.proyector .cabecera p { font-size: 1.2rem; }
+#qr { background: #fff; padding: 8px; border-radius: 12px; line-height: 0; }
+#url { color: var(--suave); font-size: .8rem; margin: 4px 0 0; text-align: center; max-width: 220px; word-break: break-all; line-height: 1.3; }
+.proyector-main { max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; padding: 8px 32px 32px; align-items: start; }
+.proyector .muro { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.proyector .tarjeta h3 { font-size: 1.2rem; }
+.proyector .foto { font-size: 4rem; }
+.proyector .fila { grid-template-columns: 24px 110px 1fr 32px; font-size: 1.1rem; }
+.proyector .barra { height: 16px; }
+#contador { color: var(--suave); margin-top: 16px; }
+#ganador { width: 100%; margin-top: 12px; font-size: 1.1rem; }
+
+#telon { position: fixed; inset: 0; background: rgba(10, 4, 20, .94); display: flex; align-items: center; justify-content: center; text-align: center; z-index: 5; cursor: pointer; }
+#telon .corona { font-size: 4rem; margin: 0; }
+#telon .foto { width: min(60vmin, 360px); margin: 12px auto; font-size: 8rem; border: 4px solid var(--naranja); }
+#telon h2 { font-size: clamp(2rem, 6vw, 4rem); margin: 0; }
+#telon p { color: var(--suave); font-size: 1.3rem; margin: 4px 0; }
+#confeti { position: fixed; inset: 0; pointer-events: none; z-index: 6; }
+
+@media (max-width: 900px) {
+  .proyector .cabecera { flex-direction: column; text-align: center; }
+  .proyector-main { grid-template-columns: 1fr; padding: 8px 16px 32px; }
+}
